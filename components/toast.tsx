@@ -42,7 +42,7 @@ function Toast(props: ToastProps) {
   }, []);
 
   return (
-    <div className="flex toast-mobile:w-[356px] w-full justify-center">
+    <div className="flex toast-mobile:w-89 w-full justify-center">
       <div
         className={cn(
           "flex toast-mobile:w-fit w-full flex-row gap-3 rounded-lg bg-zinc-100 p-3",

@@ -10,7 +10,7 @@
 Framework: Next.js 16.0.10 (App Router)
 Runtime: React 19.0.1
 Language: TypeScript 5.6.3
-Package Manager: pnpm 9.12.3
+Package Manager: Bun 1.3.6
 Styling: Tailwind CSS v4 + shadcn/ui (new-york style)
 Database: PostgreSQL (Drizzle ORM)
 Auth: Auth.js v5 (next-auth 5.0.0-beta.25)
@@ -251,15 +251,15 @@ REDIS_URL=****                # Redis for resumable streams
 ## Development Commands
 
 ```bash
-pnpm install          # Install dependencies
-pnpm dev              # Start dev server (--turbo)
-pnpm build            # Run migrations + build
-pnpm db:migrate       # Apply database migrations
-pnpm db:generate      # Generate migration files
-pnpm db:studio        # Drizzle Studio GUI
-pnpm lint             # Biome linting (ultracite)
-pnpm format           # Biome formatting
-pnpm test             # Playwright E2E tests
+bun install          # Install dependencies
+bun dev              # Start dev server (--turbo)
+bun build            # Run migrations + build
+bun db:migrate       # Apply database migrations
+bun db:generate      # Generate migration files
+bun db:studio        # Drizzle Studio GUI
+bun lint             # Biome linting
+bun format           # Biome formatting
+bun test             # Playwright E2E tests
 ```
 
 ---
@@ -280,7 +280,7 @@ pnpm test             # Playwright E2E tests
 
 ## Code Conventions
 
-- **Biome**: Linting + formatting via `ultracite`
+- **Biome**: Linting + formatting
 - **File naming**: kebab-case for files, PascalCase for components
 - **Imports**: Absolute with `@/` alias
 - **Error handling**: Custom `ChatSDKError` class
