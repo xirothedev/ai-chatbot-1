@@ -233,7 +233,7 @@ export async function POST(request: Request) {
             await createStreamId({ streamId, chatId: id });
             await streamContext.createNewResumableStream(
               streamId,
-              () => sseStream
+              () => sseStream,
             );
           }
         } catch (_) {
@@ -251,7 +251,7 @@ export async function POST(request: Request) {
     if (
       error instanceof Error &&
       error.message?.includes(
-        "AI Gateway requires a valid credit card on file to service requests"
+        "AI Gateway requires a valid credit card on file to service requests",
       )
     ) {
       return new ChatSDKError("bad_request:activate_gateway").toResponse();

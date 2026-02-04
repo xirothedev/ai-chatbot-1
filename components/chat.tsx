@@ -98,7 +98,7 @@ export function Chat({
             "state" in part &&
             part.state === "approval-responded" &&
             "approval" in part &&
-            (part.approval as { approved?: boolean })?.approved === true
+            (part.approval as { approved?: boolean })?.approved === true,
         ) ?? false;
       return shouldContinue;
     },
@@ -115,7 +115,7 @@ export function Chat({
               return (
                 state === "approval-responded" || state === "output-denied"
               );
-            })
+            }),
           );
 
         return {
@@ -172,7 +172,7 @@ export function Chat({
 
   const { data: votes } = useSWR<Vote[]>(
     messages.length >= 2 ? `/api/vote?chatId=${id}` : null,
-    fetcher
+    fetcher,
   );
 
   const [attachments, setAttachments] = useState<Attachment[]>([]);
@@ -266,7 +266,7 @@ export function Chat({
               onClick={() => {
                 window.open(
                   "https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card",
-                  "_blank"
+                  "_blank",
                 );
                 window.location.href = "/";
               }}
